@@ -67,6 +67,14 @@ p {
 	margin: 0px;
 }
 
+.bubble-content {
+	font-size: 2vw;
+	align-self: center;
+	height: fit-content;
+	width: fit-content;
+
+}
+
 .bubble {
 	background-color: rgb(105, 155, 249);
 	height: 95%;
