@@ -76,6 +76,8 @@ p {
 	align-self: center;
 	border: 1vw solid #ccc;
 	/* opacity: 0; */
+	display: flex;
+	justify-content: center;
 }
 
 .bubble:hover {
@@ -84,3 +86,9 @@ p {
 	cursor: pointer;
 	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     }
+
+a {
+	align-self: center;
+	height: fit-content;
+	width: fit-content;
+}
