@@ -8,7 +8,7 @@ font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(3, 1fr);
-	background-color: beige;
+	background-color: #befce9;
 	height: 100vh;
 	width: 100vw;
 	margin: 0%;
