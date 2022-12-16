@@ -65,7 +65,6 @@ $(document).ready(function () {
     //   return myDict;
     // }
 
-    
     // $('.master-grid').append("<div class='bubble' id='" + i + "'><div>");
     // $('#' + i).append('<p class="bubble-content">' + objArray[0] + '</p>');
   }
@@ -76,14 +75,13 @@ $(document).ready(function () {
     myDict[key] = value;
     return myDict;
   }
-  
-  async function boredApi(boredDict, i, types) {
+
+  async function boredApi (boredDict, i, types) {
     const response = await fetch(`http://www.boredapi.com/api/activity?type=${types}`);
     const objArray = Object.values(await response.json());
     boredDict = addKeyValuePair(boredDict, objArray[0], objArray[1]);
     return boredDict;
   }
-  
 
   function randomKeyValuePair (dict1, dict2) {
     console.log(dict1);
