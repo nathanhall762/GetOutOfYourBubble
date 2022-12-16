@@ -93,7 +93,7 @@ $(document).ready(function () {
       });
     }
 
-    function randomKeyValuePair(dict1, dict2) {
+    function randomKeyValuePair (dict1, dict2) {
       console.log(dict1);
       console.log(dict2);
       // Determine which dictionary to select a key, value pair from
@@ -102,17 +102,16 @@ $(document).ready(function () {
 
       // Get the keys of the selected dictionary as an array
       const keys = Object.keys(selectedDict);
-      console.log(keys)
-    
+      console.log(keys);
+
       // Select a random key from the array
       const randomKey = keys[Math.floor(Math.random() * keys.length)];
-    
+
       // Get the value for the selected key
       const value = selectedDict[randomKey];
-    
+
       // Print the key, value pair to the console
       console.log(randomKey, value);
     }
-    
   });
 });
