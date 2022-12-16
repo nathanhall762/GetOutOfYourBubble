@@ -9,8 +9,8 @@ font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(3, 1fr);
 	background: url(../GetOutOfYourBubble/images/back_doug.png) fixed;
-	height: 100vh;
-	width: 100vw;
+	height: 100%;
+	width: 100%;
 	margin: 0%;
 	/* gap: 1vw; */
 }
