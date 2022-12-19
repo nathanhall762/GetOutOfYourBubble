@@ -1,17 +1,17 @@
 $(document).ready(function () {
-  // $('.form-container').on('click', function () {
-  //   $('label.form-objects').animate({
-  //     opacity: 1
-  //   }, 5000);
-  //   $('input.form-objects').animate({
-  //     opacity: 1
-  //   }, 6000);
-  // });
-  // $('input.form-objects').on('click', function () {
-  //   $('button.form-objects').animate({
-  //     opacity: 1
-  //   }, 7000);
-  // });
+  $('.form-container').on('mouseover', function () {
+    $('label.form-objects').animate({
+      opacity: 1
+    }, 5000);
+    $('input.form-objects').animate({
+      opacity: 1
+    }, 6000);
+  });
+  $('input.form-objects').on('click', function () {
+    $('button.form-objects').animate({
+      opacity: 1
+    }, 7000);
+  });
   $('button.form-objects').on('click', function () {
     $('.form-container').remove();
     const countries = [
@@ -22,9 +22,7 @@ $(document).ready(function () {
       'ph', 'pl', 'pt', 'ro', 'rs', 'ru', 'sa', 'se', 'sg',
       'si', 'sk', 'th', 'tr', 'tw', 'ua', 'us', 've', 'za'
     ];
-    // const newsDict = {};
     newsApi(countries[Math.floor(Math.random() * 10)]);
-    // console.log(newsDict);
     const types = [
       'education',
       'recreational',
@@ -40,8 +38,6 @@ $(document).ready(function () {
     for (let i = 0; i < 3; i++) {
       boredApi(boredDict, types[Math.floor(Math.random() * 9)]);
     }
-    // console.log(boredDict);
-    // randomKeyValuePair(boredDict, newsDict);
 
     function newsApi (country) {
       $.ajax({
@@ -68,12 +64,8 @@ $(document).ready(function () {
               $('.master-grid').append("<div class='bubble' id='" + i + "'><div>");
               $('#' + i).append("<a href='" + objArray[4] + "' target='_blank'><img src='" + objArray[5] + "' alt='incoming bubble...' style='width:20vw;height:20vh;'></a>");
               $('#' + i).append("<p>" + objArray[2] + "</p>");
-            } else {
-              i--;
             }
           }
-          //   console.log(myDict);
-          // return myDict;
         }
       });
     }
@@ -85,42 +77,18 @@ $(document).ready(function () {
 
     function boredApi (boredDict, i, types) {
       $.ajax({
-        url: 'http://www.boredapi.com/api/activity?',
+        url: 'https://www.boredapi.com/api/activity?',
         type: 'GET',
         data: {
           type: types
         },
         success: function (response) {
           const objArray = (Object.values(response));
-          // console.log(objArray[1]);
           boredDict = addKeyValuePair(boredDict, objArray[0], objArray[1]);
           $('.master-grid').append("<div class='bubble' id='" + i + "'><div>");
           $('#' + i).append('<p class="bubble-content">' + objArray[0] + '</p>');
-          // return boredDict;
         }
       });
     }
-
-    //   function randomKeyValuePair (dict1, dict2) {
-    //     console.log(dict1);
-    //     console.log(dict2);
-    //     // Determine which dictionary to select a key, value pair from
-    //     const selectedDict = Math.random() < 0.5 ? dict1 : dict2;
-    //     console.log(selectedDict);
-
-    //     // Get the keys of the selected dictionary as an array
-    //     const keys = Object.keys(selectedDict);
-    //     console.log(keys);
-
-    //     // Select a random key from the array
-    //     const randomKey = keys[Math.floor(Math.random() * keys.length)];
-
-    //     // Get the value for the selected key
-    //     const value = selectedDict[randomKey];
-
-  //     // Print the key, value pair to the console
-  //     console.log(randomKey, value);
-  //   }
-  // });
   });
 });
