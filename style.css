@@ -76,7 +76,7 @@ p {
 }
 
 .bubble {
-	background: url(../GetOutOfYourBubble/images/bubble.png);
+	background: url(/images/bubble.png);
 	background-position: center;
 	height: 450px;
 	width: 450px;

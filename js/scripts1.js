@@ -22,9 +22,9 @@ $(document).ready(function () {
       'ph', 'pl', 'pt', 'ro', 'rs', 'ru', 'sa', 'se', 'sg',
       'si', 'sk', 'th', 'tr', 'tw', 'ua', 'us', 've', 'za'
     ];
-    let newsDict = {};
-    newsApi(newsDict, countries[Math.floor(Math.random() * 10)]); // should return dict of key, value pairs {imageUrl: linkUrl}
-    console.log(newsDict);
+    // const newsDict = {};
+    newsApi(countries[Math.floor(Math.random() * 10)]);
+    // console.log(newsDict);
     const types = [
       'education',
       'recreational',
@@ -36,33 +36,44 @@ $(document).ready(function () {
       'music',
       'busywork'
     ];
-    for (let i = 0; i < 9; i++) {
-      boredApi(i, types[Math.floor(Math.random() * 10)]);
+    const boredDict = {};
+    for (let i = 0; i < 3; i++) {
+      boredApi(boredDict, types[Math.floor(Math.random() * 9)]);
     }
+    // console.log(boredDict);
+    // randomKeyValuePair(boredDict, newsDict);
 
-    function newsApi (myDict, countries) {
+    function newsApi (country) {
       $.ajax({
         url: 'https://newsapi.org/v2/top-headlines',
         type: 'GET',
         data: {
-          country: countries,
+          country: country,
           apiKey: '779b745ff8aa4d5a960d37036412c454',
           pageSize: 9,
           page: 1
         },
         success: function (response) {
-          const obj = (response.articles);
-          const objArray = (Object.values(obj));
-          for (let i = 0; i < 9; i++) {
-            const valueArray = Object.values(objArray[i]);
-            if (valueArray[5] != null) {
-                myDict = addKeyValuePair(myDict, valueArray[4], valueArray[5]);
-              }
+          console.log(country);
+          for (let i = 0; i < 6; i++) {
+            const obj = (response.articles[i]);
+            const objArray = (Object.values(obj));
+            // const valueArray = Object.values(objArray[i]);
+            console.log(objArray);
+            if (objArray[5] != null) {
+              console.log(objArray[4]);
+              console.log(objArray[5]);
+              console.log(objArray[2])
+              // myDict = addKeyValuePair(myDict, valueArray[4], valueArray[5]);
+              $('.master-grid').append("<div class='bubble' id='" + i + "'><div>");
+              $('#' + i).append("<a href='" + objArray[4] + "' target='_blank'><img src='" + objArray[5] + "' alt='incoming bubble...' style='width:20vw;height:20vh;'></a>");
+              $('#' + i).append("<p>" + objArray[2] + "</p>");
+            } else {
+              i--;
+            }
           }
-        //   console.log(myDict);
-          return myDict;
-        //   $('.master-grid').append("<div class='bubble' id='" + i + "'><div>");
-        //   $('#' + i).append("<a href='" + objArray[4] + "' target='_blank'><img src='" + objArray[5] + "' alt='incoming bubble...' style='width:20vw;height:20vh;'></a>");
+          //   console.log(myDict);
+          // return myDict;
         }
       });
     }
@@ -72,7 +83,7 @@ $(document).ready(function () {
       return myDict;
     }
 
-    function boredApi (i, types) {
+    function boredApi (boredDict, i, types) {
       $.ajax({
         url: 'http://www.boredapi.com/api/activity?',
         type: 'GET',
@@ -80,12 +91,36 @@ $(document).ready(function () {
           type: types
         },
         success: function (response) {
-          $('.master-grid').append("<div class='bubble' id='" + i + "'><div>");
           const objArray = (Object.values(response));
-          console.log(objArray[1]);
+          // console.log(objArray[1]);
+          boredDict = addKeyValuePair(boredDict, objArray[0], objArray[1]);
+          $('.master-grid').append("<div class='bubble' id='" + i + "'><div>");
           $('#' + i).append('<p class="bubble-content">' + objArray[0] + '</p>');
+          // return boredDict;
         }
       });
     }
+
+    //   function randomKeyValuePair (dict1, dict2) {
+    //     console.log(dict1);
+    //     console.log(dict2);
+    //     // Determine which dictionary to select a key, value pair from
+    //     const selectedDict = Math.random() < 0.5 ? dict1 : dict2;
+    //     console.log(selectedDict);
+
+    //     // Get the keys of the selected dictionary as an array
+    //     const keys = Object.keys(selectedDict);
+    //     console.log(keys);
+
+    //     // Select a random key from the array
+    //     const randomKey = keys[Math.floor(Math.random() * keys.length)];
+
+    //     // Get the value for the selected key
+    //     const value = selectedDict[randomKey];
+
+  //     // Print the key, value pair to the console
+  //     console.log(randomKey, value);
+  //   }
+  // });
   });
 });
