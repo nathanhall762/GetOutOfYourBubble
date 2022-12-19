@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $('.form-container').on('click', function () {
+  $('.form-container').on('mouseover', function () {
     $('label.form-objects').animate({
       opacity: 1
     }, 5000);
