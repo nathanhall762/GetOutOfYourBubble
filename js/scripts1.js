@@ -14,7 +14,8 @@ $(document).ready(function () {
   });
   $('button.form-objects').on('click', function () {
     $('.form-container').remove();
-    const countries = [
+    $('.master-grid').css('grid-template-rows', 'repeat(3, 1fr)')
+      const countries = [
       'ae', 'ar', 'at', 'au', 'be', 'bg', 'br', 'ca', 'ch',
       'cn', 'co', 'cu', 'cz', 'de', 'eg', 'fr', 'gb', 'gr',
       'hk', 'hu', 'id', 'ie', 'il', 'in', 'it', 'jp', 'kr',
@@ -35,8 +36,8 @@ $(document).ready(function () {
       'busywork'
     ];
     const boredDict = {};
-    for (let i = 0; i < 3; i++) {
-      boredApi(boredDict, types[Math.floor(Math.random() * 9)]);
+    for (let i = 10; i < 13; i++) {
+      boredApi(boredDict, i, types[Math.floor(Math.random() * 9)]);
     }
 
     function newsApi (country) {
@@ -62,8 +63,8 @@ $(document).ready(function () {
               console.log(objArray[2])
               // myDict = addKeyValuePair(myDict, valueArray[4], valueArray[5]);
               $('.master-grid').append("<div class='bubble' id='" + i + "'><div>");
+              $('#' + i).append('<p class="bubble-content">' + objArray[2] + "</p>");
               $('#' + i).append("<a href='" + objArray[4] + "' target='_blank'><img src='" + objArray[5] + "' alt='incoming bubble...' style='width:20vw;height:20vh;'></a>");
-              $('#' + i).append("<p>" + objArray[2] + "</p>");
             }
           }
         }
