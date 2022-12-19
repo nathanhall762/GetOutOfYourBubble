@@ -52,7 +52,8 @@ $(document).ready(function () {
         },
         success: function (response) {
           console.log(country);
-          for (let i = 0; i < 6; i++) {
+          let j = 0;
+          for (let i = 0; i < 9; i++) {
             const obj = (response.articles[i]);
             const objArray = (Object.values(obj));
             // const valueArray = Object.values(objArray[i]);
@@ -65,6 +66,10 @@ $(document).ready(function () {
               $('.master-grid').append("<div class='bubble' id='" + i + "'><div>");
               $('#' + i).append('<p class="bubble-content">' + objArray[2] + "</p>");
               $('#' + i).append("<a href='" + objArray[4] + "' target='_blank'><img src='" + objArray[5] + "' alt='incoming bubble...' style='width:20vw;height:20vh;'></a>");
+              j++;
+            }
+            if (j === 6) {
+              break;
             }
           }
         }
