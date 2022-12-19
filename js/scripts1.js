@@ -14,6 +14,7 @@ $(document).ready(function () {
   });
   $('button.form-objects').on('click', function () {
     $('.form-container').remove();
+    $('.master-grid').css('background', 'url(./images/back_doug.png) center / contain fixed')
     $('.master-grid').css('grid-template-rows', 'repeat(3, 1fr)')
       const countries = [
       'ae', 'ar', 'at', 'au', 'be', 'bg', 'br', 'ca', 'ch',

@@ -1,14 +1,14 @@
 body {
 	margin: 0px;
 	font-size: 5vw;
-font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .master-grid {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: 25vh 50vh 25vh;
-	background: url(/images/back_doug.png) center / contain fixed;
+	background: url(./images/back_doug_bubble.png) center / contain fixed;
 	height: 100%;
 	width: 100;
 	margin: 0%;
@@ -78,7 +78,7 @@ p {
 }
 
 .bubble {
-	background: url(/images/bubble.png) no-repeat;
+	background: url(./images/bubble.png) no-repeat;
 	background-position: center;
 	height: 450px;
 	width: 450px;
