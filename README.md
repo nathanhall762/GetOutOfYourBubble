@@ -8,6 +8,8 @@ Get Out of Your Bubble is a website where the user reads the prompt, clicks the 
 ## Instructions
 NewsAPI forces requests to be made from localserver or server-side. To explore the functionality of *Get Out of Your Bubble*, please clone this repository and run it on your local testing server.
 
+If you are not interested in the NewsAPI functionality, the webpage is hosted at nathanhall762.github.io. The bubbles will still propagate with BoredAPI activity suggestions!
+
 ```
 git clone https://github.com/nathanhall762/GetOutOfYourBubble.git
 ```
