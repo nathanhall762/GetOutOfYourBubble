@@ -1,6 +1,6 @@
 # Get Out of Your Bubble
 ### Dynamic Content from Around the World
-##### A project from Connor Hostler and Nathan Hall, the brilliant minds behind HBNB and printf*.
+##### A project from Connor Hostler and Nathan Hall, the brilliant minds behind HBNB, simple shell and printf*.
 ---
 
 Get Out of Your Bubble is a website where the user reads the prompt, clicks the button, receives dynamically served bubble-popping API results formatted inside styled containers.
