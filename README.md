@@ -11,3 +11,5 @@ NewsAPI forces requests to be made from localserver or server-side. To explore t
 ```
 git clone https://github.com/nathanhall762/GetOutOfYourBubble.git
 ```
+## Known Bugs
+The image file paths in the style.css file may not be correct for your system in order to render the webpage in your browser. 
